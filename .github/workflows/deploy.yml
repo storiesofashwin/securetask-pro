@@ -1,0 +1,39 @@
+name: SecureTaskPro CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  build-and-deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+
+          python -m pip install --upgrade pip
+
+          pip install flask
+          pip install flask_sqlalchemy
+          pip install pymysql
+          pip install boto3
+          pip install werkzeug
+
+      - name: CI/CD Pipeline Success
+        run: |
+
+          echo "SecureTask Pro Build Successful"
