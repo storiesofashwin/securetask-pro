@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Edit Task</title>
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+
+</head>
+
+<body class="hold-transition">
+
+<div class="container mt-5">
+
+    <div class="card card-warning">
+
+        <div class="card-header">
+            <h3 class="card-title">Edit Task</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                <div class="form-group">
+
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="title"
+                    value="{{ task.title }}"
+                    required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <textarea
+                    class="form-control"
+                    name="description"
+                    required>{{ task.description }}</textarea>
+
+                </div>
+
+                <button
+                type="submit"
+                class="btn btn-warning">
+
+                    Update Task
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
